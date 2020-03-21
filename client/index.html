@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatte</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 jumbotron">
+                <h1>Welcome to Chatte</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <form id="transmitter" class="form-group">
+                    <input class="form-control" type="text" name="room"/ placeholder="Your room...">
+                    <textarea class="form-control" name="message" placeholder="Your message..."></textarea>
+                    <br/>
+                    <button type="Submit" class="form-control btn btn-success">Message!</button>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" id="receiver">
+            </div>
+        </div>  
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

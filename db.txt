@@ -1,0 +1,6 @@
+CREATE TABLE messages(
+mid SERIAL NOT NULL,
+room VARCHAR(16) NOT NULL, 
+message VARCHAR(128) NOT NULL,
+PRIMARY KEY (mid)
+);

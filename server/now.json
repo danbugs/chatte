@@ -4,7 +4,10 @@
         "src": "index.js",
         "use": "@now/node"
     }],
-    "routes": [{
-        "src":"/.*", "dest": "index.js"
-    }]
+    "routes": [
+        {"src": "/certs/private-key.pem.key" , "dest": "certs/private-key.pem.key"},
+        {"src": "/certs/device.pem.crt", "dest": "certs/device.pem.crt"},
+        {"src": "/certs/aws-root-cert.pem", "dest": "certs/aws-root-cert.pem"},
+        {"src":"/.*", "dest": "index.js"}
+    ]
 }

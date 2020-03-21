@@ -1,0 +1,25 @@
+{
+  "name": "chatte-server",
+  "version": "1.0.0",
+  "description": "Chat with cats!",
+  "main": "index.js",
+  "dependencies": {
+    "aws-iot-device-sdk": "^2.2.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danbugs/chatte.git"
+  },
+  "author": "Dan Chiarlone",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danbugs/chatte/issues"
+  },
+  "homepage": "https://github.com/danbugs/chatte#readme"
+}

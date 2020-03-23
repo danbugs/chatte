@@ -9,21 +9,21 @@
 <body>
     <main>
         <div class="container">
-            <div class="row jumbotron">
-                <h1>Welcome to Chatte</h1>
-            </div>
-            <div class="row text-center">
-                <div class="offset-md-4 col-md-4">
-                    <form id="index" class="form-group">
-                        <input type="text" class="form-control" name="room" placeholder="Enter room name...">
-                        <input type="text" class="form-control" name="chatter" placeholder="Enter your name...">
+            <div class="row">
+                <div class="col-md-12">
+                    <form id="transmitter" class="form-group">
+                        <textarea class="form-control" name="message" placeholder="Your message..."></textarea>
                         <br/>
-                        <button type="Submit" class="form-control btn btn-success">Join room!</button>
+                        <button type="Submit" class="form-control btn btn-success">Message!</button>
                     </form>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-12" id="receiver">
+                </div>
+            </div>  
         </div>
     </main>
-    <script src="index.js"></script>
+    <script src="chatte.js"></script>
 </body>
 </html>

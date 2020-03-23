@@ -6,7 +6,8 @@ let pg = require('pg');
 
 
 let app = express();
-let client = new pg.Client('postgres://hyxctnqj:Q1has7QEPH78hOFBUnA_jLyzwv8zQyeh@drona.db.elephantsql.com:5432/hyxctnqj');
+let client = new pg.Client(process.env.DB);
+let connected;
 
 app.use(cors());
 app.use(express.json());
@@ -18,53 +19,58 @@ let device = awsIot.device({
  certPath: __dirname + "/certs/device.pem.crt",
    caPath: __dirname + "/certs/aws-root-cert.pem",
  clientId: 'thing',
-     host: 'a3t6mh767rbx1y-ats.iot.us-west-2.amazonaws.com',
+     host: process.env.HOST,
 });
 
 connect();
 client.connect(function(err){
   if(err){
-    console.log(err);
+    console.log('db not connected');
   }else{
-    console.log('db connect OK');
+    console.log('db connected');
   }
 })
 
 app.get('/', (req, res) => {
-  client.query('SELECT * FROM messages', function(err, result){
+  res.status(200).send({message: "Welcome to Chatte's server"});
+})
+
+app.post('/fetch_messages', (req, res) => {
+  let query = {
+    name: 'fetch_messages',
+    text: 'SELECT * FROM messages WHERE room = $1;',
+    values: [req.body.room]
+  }
+  client.query(query, function(err, result){
     if(err){
-      res.status(500).send(JSON.stringify(err));
+      res.status(500).send(err);
     }
-    else{
-      console.log(result.rows);
       res.status(200).send(result.rows);
-    }
   })
 })
 
 app.post('/message', (req, res) => {
   device.publish(req.body.room, JSON.stringify(req.body.message));
-
   let query = {
     name: 'message',
-    text: 'INSERT INTO messages (room, message) VALUES ($1, $2);',
-    values: [req.body.room, req.body.message]      
+    text: 'INSERT INTO messages (room, chatter, message) VALUES ($1, $2, $3);',
+    values: [req.body.room, req.body.chatter,req.body.message]      
   }
   client.query(query, function(err, result){
     if(err){
-      console.log(err);
+      res.status(500).send(JSON.stringify(err));
     }else{
       res.status(200).send(JSON.stringify(`sent: ${req.body.message}`))
     }
   })
 })
 
-app.listen(3001);
+app.listen(3000);
 
 // <MQTT>
 function connect() {
   device.on('error', (err) => {
-    console.log(err);
+    console.log('device error 1:', err);
     device.end();
   })
 
@@ -77,7 +83,7 @@ function connect() {
   })
 
   device.on('close', () => {
-    console.log('closed!')
+    connect();
   })
 }
 // </MQTT>

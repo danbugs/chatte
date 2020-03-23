@@ -4,6 +4,9 @@
         "src": "index.js",
         "use": "@now/node"
     }],
+    "env": {
+        "DB": "@db"
+    },
     "routes": [
         {"src": "/certs/private-key.pem.key" , "dest": "certs/private-key.pem.key"},
         {"src": "/certs/device.pem.crt", "dest": "certs/device.pem.crt"},

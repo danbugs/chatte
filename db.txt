@@ -1,7 +1,7 @@
 CREATE TABLE messages(
 mid SERIAL NOT NULL,
 room VARCHAR(16) NOT NULL, 
-chatter VARCHAR(16) NOT NULL,
+chapper VARCHAR(16) NOT NULL,
 message VARCHAR(128) NOT NULL,
 PRIMARY KEY (mid)
 );

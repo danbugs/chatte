@@ -1,12 +1,12 @@
 if(sessionStorage.getItem('room')){
-    let server = location.hostname === 'localhost' ? ('http://localhost:3000/') : ('https://chatte-server.now.sh/');
+    let server = location.hostname === 'localhost' ? ('http://localhost:3000/') : ('https://yachapp-server.now.sh/');
     let form = document.querySelector('form#transmitter');
     form.addEventListener("submit", (e) => {
         e.preventDefault();
         let form_data = new FormData(form);
         let message = {
             room: sessionStorage.getItem('room'),
-            chatter: sessionStorage.getItem('chatter'),
+            chapper: sessionStorage.getItem('chapper'),
             message: form_data.get('message')
         }
         fetch(server + 'message', 
@@ -48,7 +48,7 @@ if(sessionStorage.getItem('room')){
                 for(let i = 0; i < result.length; i++){
                     $('#receiver').append(
                         `
-                        <p><b>${result[i].chatter} said:</b> ${result[i].message}</p>
+                        <p><b>${result[i].chapper} said:</b> ${result[i].message}</p>
                         `
                     )
                 }

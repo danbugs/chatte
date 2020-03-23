@@ -32,7 +32,7 @@ client.connect(function(err){
 })
 
 app.get('/', (req, res) => {
-  res.status(200).send({message: "Welcome to Chatte's server"});
+  res.status(200).send({message: "Welcome to yachapp's server"});
 })
 
 app.post('/fetch_messages', (req, res) => {
@@ -53,8 +53,8 @@ app.post('/message', (req, res) => {
   device.publish(req.body.room, JSON.stringify(req.body.message));
   let query = {
     name: 'message',
-    text: 'INSERT INTO messages (room, chatter, message) VALUES ($1, $2, $3);',
-    values: [req.body.room, req.body.chatter,req.body.message]      
+    text: 'INSERT INTO messages (room, chapper, message) VALUES ($1, $2, $3);',
+    values: [req.body.room, req.body.chapper,req.body.message]      
   }
   client.query(query, function(err, result){
     if(err){

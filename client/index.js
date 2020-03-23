@@ -1,15 +1,15 @@
 let form_index = document.querySelector('form#index');
-let server = (location.hostname === 'localhost') ? 'http://localhost:3000/' : 'https://chatte-server.now.sh/';
+let server = (location.hostname === 'localhost') ? 'http://localhost:3000/' : 'https://yachapp-server.now.sh/';
 form_index.addEventListener('submit', e => {
     e.preventDefault();
     let form_data_index = new FormData(form_index);
     let info = {
         room: form_data_index.get("room"),
-        chatter: form_data_index.get("chatter")
+        chapper: form_data_index.get("chapper")
     };
     sessionStorage.setItem("room", form_data_index.get('room'));
-    sessionStorage.setItem("chatter", form_data_index.get('chatter'));
+    sessionStorage.setItem("chapper", form_data_index.get('chapper'));
     console.log(location.port);
     location.href = (location.hostname === 'localhost') ?
-        'http://localhost:'+location.port+'/chatte.html' : 'https://chatte.now.sh/chatte.html';
+        'http://localhost:'+location.port+'/yachapp.html' : 'https://yachapp.now.sh/yachapp.html';
 });

@@ -1,5 +1,5 @@
 {
-  "name": "chatte-server",
+  "name": "yachapp-server",
   "version": "1.0.0",
   "description": "Chat with cats!",
   "main": "index.js",
@@ -16,12 +16,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/danbugs/chatte.git"
+    "url": "git+https://github.com/danbugs/yachapp.git"
   },
   "author": "Dan Chiarlone",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/danbugs/chatte/issues"
+    "url": "https://github.com/danbugs/yachapp/issues"
   },
-  "homepage": "https://github.com/danbugs/chatte#readme"
+  "homepage": "https://github.com/danbugs/yachapp#readme"
 }

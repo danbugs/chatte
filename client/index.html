@@ -2,27 +2,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatte</title>
+    <title>yachapp</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <main>
         <div class="container">
-            <div class="row jumbotron">
-                <h1>Welcome to Chatte</h1>
-            </div>
-            <div class="row text-center">
-                <div class="offset-md-4 col-md-4">
-                    <form id="index" class="form-group">
-                        <input type="text" class="form-control" name="room" placeholder="Enter room name...">
-                        <input type="text" class="form-control" name="chatter" placeholder="Enter your name...">
-                        <br/>
-                        <button type="Submit" class="form-control btn btn-success">Join room!</button>
-                    </form>
+            <div class="vertical-center">
+                <div class="row text-center">
+                    <div class="col-md-12">
+                        <h1 class="text-center">Yes, another chat app!</h1>
+                        <br>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="offset-md-3 col-md-6">
+                        <form id="index" class="form-group">
+                            <input type="text" class="form-control" name="room" placeholder="Enter room name...">
+                            <input type="text" class="form-control" name="chapper" placeholder="Enter your name...">
+                            <br/>
+                            <button type="Submit" class="form-control btn btn-success">Join room!</button>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
+            </div>
     </main>
     <script src="index.js"></script>
 </body>
